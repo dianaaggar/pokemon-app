@@ -1,20 +1,25 @@
 import React from 'react'
 
-import pokemon from '../models/pokemon';
+// import pokemon from '../models/pokemon';
+
 const myStyle = {
     color: '#ffffff',
-    backgroundColor: '#000000',
+    backgroundColor: 'red',
+    textAlign: 'center',
+    fontSize: '20px',
+    fontWeight: 'bold'
     };
 
-function Index() {
-  return (
+function Index({pokemon}) {
+
+return (
     <div style={myStyle}>
         <h1> See all the pokemons </h1>
         <ul>
         {pokemon.map((p,i) => {
-            return(
+            return( 
                 <li key={i}>
-                    <a href={`/pokemon/${i}`}>
+                    <a href={`/pokemon/${p.id}`}>
                 {p.name[0].toUpperCase() + p.name.slice(1)}
             </a>
                     </li>
